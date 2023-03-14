@@ -1,9 +1,12 @@
 package main
 
-import (
-	"estudosgolang/model"
-)
+import "fmt"
 
 func main() {
-	model.Hello()
+	itens := []string{"Pão", "Arroz", "Carne"}
+	compraDoMes(itens, "Carrefour")
+}
+
+func compraDoMes(itens []string, mercado string) {
+	fmt.Println("Oque comprar:", itens, "Mercado:", mercado)
 }
