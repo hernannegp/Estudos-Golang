@@ -1,7 +1,11 @@
 package model
 
-import "fmt"
+import (
+	"time"
+)
 
-func Hello() {
-	fmt.Println("Começando os exercicios")
+type CompraDoMes struct {
+	Itens        []string
+	Mercado      string
+	DataDaCompra time.Time
 }

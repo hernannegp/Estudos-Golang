@@ -1,12 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"estudosgolang/model"
+	"fmt"
+	"time"
+)
 
 func main() {
-	itens := []string{"Pão", "Arroz", "Carne"}
-	compraDoMes(itens, "Carrefour")
-}
-
-func compraDoMes(itens []string, mercado string) {
-	fmt.Println("Oque comprar:", itens, "Mercado:", mercado)
+	lista := model.CompraDoMes{
+		Itens:        []string{"Pão", "Arroz", "Carne"},
+		Mercado:      "Carrefour",
+		DataDaCompra: time.Now(),
+	}
+	fmt.Println("Oque Comprou:", lista.Itens, "/", "Mercado:", lista.Mercado, "/", "Data da Compra:", lista.DataDaCompra)
 }
