@@ -7,10 +7,17 @@ import (
 )
 
 func main() {
-	lista := model.CompraDoMes{
-		Itens:        []string{"Pão", "Arroz", "Carne"},
-		Mercado:      "Carrefour",
-		DataDaCompra: time.Now(),
+	var nomeDosItens []string
+	nomeDosItens = append(nomeDosItens, "arroz")
+	nomeDosItens = append(nomeDosItens, "feijao")
+	nomeDosItens = append(nomeDosItens, "mandioca")
+	nomeDosItens = append(nomeDosItens, "batata")
+	nomeDosItens = append(nomeDosItens, "frango")
+
+	compra, err := model.ComprasDoMes(nomeDosItens, "Carrefour", time.Now())
+	if err != nil {
+		fmt.Println(err.Error())
+	} else {
+		fmt.Println(compra)
 	}
-	fmt.Println("Oque Comprou:", lista.Itens, "/", "Mercado:", lista.Mercado, "/", "Data da Compra:", lista.DataDaCompra)
 }
